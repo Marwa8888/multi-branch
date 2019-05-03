@@ -1,4 +1,4 @@
-pepline {
+pipline {
     agent any
     
     stages {
