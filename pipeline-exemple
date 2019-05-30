@@ -1,0 +1,34 @@
+pipeline{
+    agent any
+    stages{
+        stage('checkout'){
+            steps {
+                git branch: 'develop', credentialsId: 'f011c40a-fb32-4f84-863e-57fe91b485b2', url: 'https://github.com/Marwa8888/projet_collab_marwa_romain.git'
+                  }}
+        stage('example1'){
+            options { retry(2) }
+            steps{
+                echo 'example1'
+            }
+        }
+    
+        stage('example2'){
+            steps{
+                echo 'example2'
+            }
+        }
+            
+        stage('example3'){
+            steps{
+                echo 'example3'
+            }
+        }
+            
+    }
+    post { success{
+        echo 'post failure'
+        
+    }
+    }
+    
+}
